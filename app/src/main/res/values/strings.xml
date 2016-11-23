@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name">MDetect Sample</string>
+
+  <!-- MainActivity -->
+  <string name="myanmar_textview">မြန်မာစာသည်တို့စာ</string>
+  <string name="myanmar_edittext">တစ်ခုခုရိုက်ထည့်ကြည့်ပါ</string>
+  <string name="myanmar_button">နှိပ်ပါ</string>
+  <string name="hello">မင်္ဂလာပါ</string>
+</resources>
