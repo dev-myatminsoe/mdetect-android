@@ -35,7 +35,7 @@ if (MDetect.isUnicode()){
 }
 ```
 
-MDetect have custom views for **TextView**, **EditTexts** and **Buttons**
+MDetect have custom views for **TextView**, **EditText** and **Button**
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -78,6 +78,15 @@ use setMMText() and getMMText() instead of setText() and getText() for custom vi
 ```java
 MMToast.makeText(context, "မင်္ဂလာပါ", Toast.LENGTH_LONG).show();
 ```
+
+##Zawgyi <-> Unicode Converter
+MDetect use [Rabbit Converter](https://github.com/Rabbit-Converter/Rabbit) for converting Zawgyi and Unicode and you can also use the features from Rabbit Converter.
+```java
+String uniSt = Rabbit.zg2uni("ေနေကာင္းလား"); //နေကောင်းလား
+String zgSt = Rabbit.uni2zg("နေကောင်းလား"); //ေနေကာင္းလား
+```
+
+
 See the sample app for more detail.
 
 #License
