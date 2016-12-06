@@ -23,7 +23,7 @@ public class Rabbit {
   }
 
   public static String replace_with_rule(String rule, String output) {
-
+    output += "";
     try {
       JSONArray rule_array = new JSONArray(rule);
       int max_loop = rule_array.length();
