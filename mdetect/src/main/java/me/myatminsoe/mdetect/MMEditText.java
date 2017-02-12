@@ -8,28 +8,35 @@ public class MMEditText extends EditText {
 
   public MMEditText(final Context context) {
     super(context);
-    if (MDetect.isUnicode()) {
-      setHint(getHint());
-    } else {
-      setHint(Rabbit.uni2zg(getHint().toString()));
+
+    if (getHint() != null) {
+      if (MDetect.isUnicode()) {
+        setHint(getHint());
+      } else {
+        setHint(Rabbit.uni2zg(getHint().toString()));
+      }
     }
   }
 
   public MMEditText(final Context context, AttributeSet attrs) {
     super(context, attrs);
-    if (MDetect.isUnicode()) {
-      setHint(getHint());
-    } else {
-      setHint(Rabbit.uni2zg(getHint().toString()));
+    if (getHint() != null) {
+      if (MDetect.isUnicode()) {
+        setHint(getHint());
+      } else {
+        setHint(Rabbit.uni2zg(getHint().toString()));
+      }
     }
   }
 
   public MMEditText(final Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
-    if (MDetect.isUnicode()) {
-      setHint(getHint());
-    } else {
-      setHint(Rabbit.uni2zg(getHint().toString()));
+    if (getHint() != null) {
+      if (MDetect.isUnicode()) {
+        setHint(getHint());
+      } else {
+        setHint(Rabbit.uni2zg(getHint().toString()));
+      }
     }
   }
 
