@@ -1,5 +1,7 @@
 # MDetect
 
+[ ![Download](https://api.bintray.com/packages/septemberboy7/MyatMinSoe-Android/MDetect/images/download.svg?version=2.0) ](https://bintray.com/septemberboy7/MyatMinSoe-Android/MDetect/2.0/link)
+
 MDetect is yet another library for displaying Burmese texts for Android.
 
 <img src="Screenshot_Zawgyi.png" width="300">        <img src="Screenshot_Unicode.png" width="300">
@@ -13,14 +15,14 @@ MDetect detects the device's font i.e. whether the user is using Unicode or Zawg
 ##Download
 Gradle:
 ```groovy
-compile 'myatminsoe.mdetect.android:mdetect-android:1.2'
+compile 'myatminsoe.mdetect.android:mdetect-android:2.0'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>myatminsoe.mdetect.android</groupId>
   <artifactId>mdetect-android</artifactId>
-  <version>1.2</version>
+  <version>2.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -28,7 +30,7 @@ or Maven:
 
 MDetect can be used for deciding whether the user is using Unicode.
 ```java
-if (MDetect.isUnicode()){
+if (MDetect.isUnicode(context)){
   //user is using Unicode
 } else {
   //user is using Zawgyi or showing squares
@@ -76,7 +78,7 @@ use setMMText() and getMMText() instead of setText() and getText() for custom vi
 
 ##Toast##
 ```java
-MMToast.makeText(context, "မင်္ဂလာပါ", Toast.LENGTH_LONG).show();
+MMToast.makeText(context, "မင်္ဂလာပါ", MMToast.LENGTH_LONG).show();
 ```
 
 ##Zawgyi <-> Unicode Converter
