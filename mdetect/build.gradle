@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 ext {
   PUBLISH_GROUP_ID = 'myatminsoe.mdetect.android'
   PUBLISH_ARTIFACT_ID = 'mdetect-android'
-  PUBLISH_VERSION = '1.2'
+  PUBLISH_VERSION = '2.0'
 }
 
 android {
