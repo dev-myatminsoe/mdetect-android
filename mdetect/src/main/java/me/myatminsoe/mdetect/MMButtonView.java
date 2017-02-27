@@ -32,7 +32,7 @@ public class MMButtonView extends Button {
    * @param unicodeString string in Myanmar Unicode
    */
   public void setMMText(String unicodeString) {
-    if (MDetect.isUnicode()) {
+    if (MDetect.isUnicode(getContext())) {
       setText(unicodeString);
     } else {
       setText(Rabbit.uni2zg(unicodeString));
@@ -45,6 +45,6 @@ public class MMButtonView extends Button {
    * @return CharSequence in Myanmar Unicode
    */
   public CharSequence getMMText() {
-    return MDetect.isUnicode() ? getText() : Rabbit.zg2uni(getText().toString());
+    return MDetect.isUnicode(getContext()) ? getText() : Rabbit.zg2uni(getText().toString());
   }
 }
