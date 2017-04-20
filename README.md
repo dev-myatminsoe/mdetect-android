@@ -15,22 +15,31 @@ MDetect detects the device's font i.e. whether the user is using Unicode or Zawg
 ##Download
 Gradle:
 ```groovy
-compile 'myatminsoe.mdetect.android:mdetect-android:2.0'
+compile 'myatminsoe.mdetect.android:mdetect-android:2.1'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>myatminsoe.mdetect.android</groupId>
   <artifactId>mdetect-android</artifactId>
-  <version>2.0</version>
+  <version>2.1</version>
   <type>pom</type>
 </dependency>
 ```
 ##How to use
 
+Initialize MDetect on your Application class onCreate.
+```java
+@Override
+public void onCreate() {
+    super.onCreate();
+    MDetect.init(this);
+}
+```
+
 MDetect can be used for deciding whether the user is using Unicode.
 ```java
-if (MDetect.isUnicode(context)){
+if (MDetect.isUnicode()){
   //user is using Unicode
 } else {
   //user is using Zawgyi or showing squares
