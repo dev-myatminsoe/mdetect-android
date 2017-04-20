@@ -12,7 +12,7 @@ Zawgyi device and Unicode device
 
 MDetect detects the device's font i.e. whether the user is using Unicode or Zawgyi by drawing က္က and compare the width with က. It doesnt embed any font and convert the text to Zawgyi if the user is using Zawgyi and it doesn't effect the performance of the app much.
 
-##Download
+## Download
 Gradle:
 ```groovy
 compile 'myatminsoe.mdetect.android:mdetect-android:2.1'
@@ -26,7 +26,7 @@ or Maven:
   <type>pom</type>
 </dependency>
 ```
-##How to use
+## How to use
 
 Initialize MDetect on your Application class onCreate.
 ```java
@@ -82,15 +82,15 @@ MDetect have custom views for **TextView**, **EditText** and **Button**
 </LinearLayout>
 ```
 
-###Setting and Getting Text
+### Setting and Getting Text
 use setMMText() and getMMText() instead of setText() and getText() for custom views.
 
-##Toast##
+## Toast
 ```java
 MMToast.makeText(context, "မင်္ဂလာပါ", MMToast.LENGTH_LONG).show();
 ```
 
-##Zawgyi <-> Unicode Converter
+## Zawgyi <-> Unicode Converter
 MDetect use [Rabbit Converter](https://github.com/Rabbit-Converter/Rabbit) for converting Zawgyi and Unicode and you can also use the features from Rabbit Converter.
 ```java
 String uniSt = Rabbit.zg2uni("ေနေကာင္းလား"); //နေကောင်းလား
@@ -100,7 +100,7 @@ String zgSt = Rabbit.uni2zg("နေကောင်းလား"); //ေနေက
 
 See the sample app for more detail.
 
-#License
+# License
 ```
 MIT License
 
