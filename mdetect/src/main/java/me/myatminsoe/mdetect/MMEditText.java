@@ -10,7 +10,7 @@ public class MMEditText extends EditText {
         super(context);
 
         if (getHint() != null) {
-            if (MDetect.isUnicode(getContext())) {
+            if (MDetect.isUnicode()) {
                 setHint(getHint());
             } else {
                 setHint(Rabbit.uni2zg(getHint().toString()));
@@ -21,7 +21,7 @@ public class MMEditText extends EditText {
     public MMEditText(final Context context, AttributeSet attrs) {
         super(context, attrs);
         if (getHint() != null) {
-            if (MDetect.isUnicode(getContext())) {
+            if (MDetect.isUnicode()) {
                 setHint(getHint());
             } else {
                 setHint(Rabbit.uni2zg(getHint().toString()));
@@ -32,7 +32,7 @@ public class MMEditText extends EditText {
     public MMEditText(final Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         if (getHint() != null) {
-            if (MDetect.isUnicode(getContext())) {
+            if (MDetect.isUnicode()) {
                 setHint(getHint());
             } else {
                 setHint(Rabbit.uni2zg(getHint().toString()));
@@ -46,7 +46,7 @@ public class MMEditText extends EditText {
      * @param unicodeString string in Myanmar Unicode
      */
     public void setMMText(String unicodeString) {
-        if (MDetect.isUnicode(getContext())) {
+        if (MDetect.isUnicode()) {
             setText(unicodeString);
         } else {
             setText(Rabbit.uni2zg(unicodeString));
@@ -59,6 +59,6 @@ public class MMEditText extends EditText {
      * @return CharSequence in Myanmar Unicode
      */
     public CharSequence getMMText() {
-        return MDetect.isUnicode(getContext()) ? getText() : Rabbit.zg2uni(getText().toString());
+        return MDetect.isUnicode() ? getText() : Rabbit.zg2uni(getText().toString());
     }
 }

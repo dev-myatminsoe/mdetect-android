@@ -1,27 +1,27 @@
 apply plugin: 'com.android.library'
 
 ext {
-  PUBLISH_GROUP_ID = 'myatminsoe.mdetect.android'
-  PUBLISH_ARTIFACT_ID = 'mdetect-android'
-  PUBLISH_VERSION = '2.0'
+    PUBLISH_GROUP_ID = 'myatminsoe.mdetect.android'
+    PUBLISH_ARTIFACT_ID = 'mdetect-android'
+    PUBLISH_VERSION = '2.1'
 }
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
-  defaultConfig {
-    minSdkVersion 9
-    targetSdkVersion 25
-    versionCode 4
-    versionName "2.0"
-  }
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 25
+        versionCode 5
+        versionName "2.1"
     }
-  }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 
 dependencies {

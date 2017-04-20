@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     //Set Title MDetect example
-    if (MDetect.isUnicode(this)) {
+    if (MDetect.isUnicode()) {
       setTitle("မြန်မာ");
     } else {
       setTitle("ျမန္မာ");
