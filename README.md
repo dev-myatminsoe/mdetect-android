@@ -8,7 +8,7 @@ MDetect is yet another library for displaying Burmese texts for Android.
 
 Zawgyi device and Unicode device
 
-##How it works
+## How it works
 
 MDetect detects the device's font i.e. whether the user is using Unicode or Zawgyi by drawing က္က and compare the width with က. It doesnt embed any font and convert the text to Zawgyi if the user is using Zawgyi and it doesn't effect the performance of the app much.
 
