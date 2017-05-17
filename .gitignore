@@ -38,3 +38,9 @@ captures/
 
 # Keystore files
 *.jks
+
+# Android Studio
+.idea/
+.gradle
+
+*.properties
