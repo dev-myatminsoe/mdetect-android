@@ -3,30 +3,20 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp"
-    >
+    android:padding="16dp">
 
-  <me.myatminsoe.mdetect.MMTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:padding="8dp"
-      android:text="@string/myanmar_textview"
-      android:textColor="@color/grey_900"
-      />
+    <me.myatminsoe.mdetect.MMTextView
+        android:id="@+id/tv_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textAppearance="@android:style/TextAppearance.Large" />
 
-  <me.myatminsoe.mdetect.MMEditText
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:hint="@string/myanmar_edittext"
-      android:padding="8dp"
-      />
-
-  <me.myatminsoe.mdetect.MMButtonView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:onClick="showMyanmarToast"
-      android:padding="8dp"
-      android:text="@string/myanmar_button"
-      />
+    <me.myatminsoe.mdetect.MMButtonView
+        android:id="@+id/btn"
+        android:onClick="showMyanmarToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="တို့(စ်)ထုတ်ရန်" />
 
 </LinearLayout>

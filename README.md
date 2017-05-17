@@ -1,36 +1,61 @@
 # MDetect
 
-[ ![Download](https://api.bintray.com/packages/septemberboy7/MyatMinSoe-Android/MDetect/images/download.svg?version=2.0) ](https://bintray.com/septemberboy7/MyatMinSoe-Android/MDetect/2.0/link)
-
 MDetect is yet another library for displaying Burmese texts for Android.
 
 <img src="Screenshot_Zawgyi.png" width="300">        <img src="Screenshot_Unicode.png" width="300">
 
 Zawgyi device and Unicode device
 
-##How it works
+## How it works
 
 MDetect detects the device's font i.e. whether the user is using Unicode or Zawgyi by drawing က္က and compare the width with က. It doesnt embed any font and convert the text to Zawgyi if the user is using Zawgyi and it doesn't effect the performance of the app much.
 
-##Download
+## Download
 Gradle:
 ```groovy
-compile 'myatminsoe.mdetect.android:mdetect-android:2.0'
+compile 'myatminsoe.mdetect.android:mdetect-android:3.0'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>myatminsoe.mdetect.android</groupId>
   <artifactId>mdetect-android</artifactId>
-  <version>2.0</version>
+  <version>3.0</version>
   <type>pom</type>
 </dependency>
 ```
-##How to use
+## How to use
+
+### Kotlin
+Initialize MDetect on your Application class onCreate.
+```kotlin
+override fun onCreate() {
+    super.onCreate()
+    MDetect.init(this)
+}
+```
+MDetect can be used for deciding whether the user is using Unicode.
+```kotlin
+if (MDetect.isUnicode()){
+  //user is using Unicode
+} else {
+  //user is using Zawgyi or showing squares
+}
+```
+
+### Java
+Initialize MDetect on your Application class onCreate.
+```java
+@Override
+public void onCreate() {
+    super.onCreate();
+    MDetect.INSTANCE.init(this);
+}
+```
 
 MDetect can be used for deciding whether the user is using Unicode.
 ```java
-if (MDetect.isUnicode(context)){
+if (MDetect.INSTANCE.isUnicode()){
   //user is using Unicode
 } else {
   //user is using Zawgyi or showing squares
@@ -73,16 +98,29 @@ MDetect have custom views for **TextView**, **EditText** and **Button**
 </LinearLayout>
 ```
 
-###Setting and Getting Text
+### Setting and Getting Text
 use setMMText() and getMMText() instead of setText() and getText() for custom views.
 
-##Toast##
-```java
+## Toast
+### Kotlin
+```kotlin
 MMToast.makeText(context, "မင်္ဂလာပါ", MMToast.LENGTH_LONG).show();
 ```
 
-##Zawgyi <-> Unicode Converter
+### Java
+```java
+MMToast.INSTANCE.makeText(context, "မင်္ဂလာပါ", MMToast.INSTANCE.LENGTH_LONG).show();
+```
+
+## Zawgyi <-> Unicode Converter
 MDetect use [Rabbit Converter](https://github.com/Rabbit-Converter/Rabbit) for converting Zawgyi and Unicode and you can also use the features from Rabbit Converter.
+### Kotlin
+```kotlin
+val uniSt = Rabbit.zg2uni("ေနေကာင္းလား"); //နေကောင်းလား
+val zgSt = Rabbit.uni2zg("နေကောင်းလား"); //ေနေကာင္းလား
+```
+
+### Java
 ```java
 String uniSt = Rabbit.zg2uni("ေနေကာင္းလား"); //နေကောင်းလား
 String zgSt = Rabbit.uni2zg("နေကောင်းလား"); //ေနေကာင္းလား
@@ -91,7 +129,7 @@ String zgSt = Rabbit.uni2zg("နေကောင်းလား"); //ေနေက
 
 See the sample app for more detail.
 
-#License
+# License
 ```
 MIT License
 

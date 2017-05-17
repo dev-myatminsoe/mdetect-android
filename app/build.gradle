@@ -1,24 +1,29 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.2"
-  defaultConfig {
-    applicationId "me.myatminsoe.mdetectsample"
-    minSdkVersion 9
-    targetSdkVersion 25
-    versionCode 1
-    versionName "1.0"
-  }
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "me.myatminsoe.mdetectsample"
+        minSdkVersion 9
+        targetSdkVersion 25
+        versionCode 3
+        versionName "3.0"
     }
-  }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 
 dependencies {
-  compile 'com.android.support:appcompat-v7:25.2.0'
-  compile project(':mdetect')
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile project(':mdetect')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

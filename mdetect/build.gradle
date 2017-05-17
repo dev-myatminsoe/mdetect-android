@@ -1,9 +1,10 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 ext {
     PUBLISH_GROUP_ID = 'myatminsoe.mdetect.android'
     PUBLISH_ARTIFACT_ID = 'mdetect-android'
-    PUBLISH_VERSION = '2.1'
+    PUBLISH_VERSION = '3.0'
 }
 
 android {
@@ -13,8 +14,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 5
-        versionName "2.1"
+        versionCode 6
+        versionName "3.0"
     }
     buildTypes {
         release {
@@ -25,7 +26,11 @@ android {
 }
 
 dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
 }
 
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+repositories {
+    mavenCentral()
+}
