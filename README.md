@@ -13,14 +13,14 @@ MDetect detects the device's font i.e. whether the user is using Unicode or Zawg
 ## Download
 Gradle:
 ```groovy
-compile 'myatminsoe.mdetect.android:mdetect-android:3.0'
+compile 'myatminsoe.mdetect.android:mdetect-android:3.1'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>myatminsoe.mdetect.android</groupId>
   <artifactId>mdetect-android</artifactId>
-  <version>3.0</version>
+  <version>3.1</version>
   <type>pom</type>
 </dependency>
 ```
