@@ -13,14 +13,14 @@ MDetect detects the device's font i.e. whether the user is using Unicode or Zawg
 ## Download
 Gradle:
 ```groovy
-compile 'myatminsoe.mdetect.android:mdetect-android:3.1'
+compile 'myatminsoe.mdetect.android:mdetect-android:3.2'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>myatminsoe.mdetect.android</groupId>
   <artifactId>mdetect-android</artifactId>
-  <version>3.1</version>
+  <version>3.2</version>
   <type>pom</type>
 </dependency>
 ```
@@ -104,12 +104,14 @@ use setMMText() and getMMText() instead of setText() and getText() for custom vi
 ## Toast
 ### Kotlin
 ```kotlin
-MMToast.makeText(context, "မင်္ဂလာပါ", MMToast.LENGTH_LONG).show();
+MMToast.showShortToast(this, "မင်္ဂလာပါ")
+MMToast.showLongToast(this, "မင်္ဂလာပါ")
 ```
 
 ### Java
 ```java
-MMToast.INSTANCE.makeText(context, "မင်္ဂလာပါ", MMToast.INSTANCE.LENGTH_LONG).show();
+MMToast.INSTANCE.showShortToast(this, "မင်္ဂလာပါ")
+MMToast.INSTANCE.showLongToast(this, "မင်္ဂလာပါ")
 ```
 
 ## Zawgyi <-> Unicode Converter
