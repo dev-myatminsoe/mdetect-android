@@ -8,7 +8,7 @@ def versionPatch = 0
 ext {
     PUBLISH_GROUP_ID = 'myatminsoe.mdetect.android'
     PUBLISH_ARTIFACT_ID = 'mdetect-android'
-    PUBLISH_VERSION = "${versionMajor}.${versionMinor}.${versionPatch}"
+    PUBLISH_VERSION = '3.2'
 }
 
 android {
