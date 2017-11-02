@@ -1,7 +1,6 @@
 package me.myatminsoe.mdetect
 
 import android.content.Context
-import android.graphics.Canvas
 import android.util.AttributeSet
 import android.widget.TextView
 
@@ -19,21 +18,13 @@ class MMTextView : TextView {
         setMMText(text.toString())
     }
 
-    override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-    }
-
     /**
      * method for setting text
 
      * @param unicodeString string in Myanmar Unicode
      */
     fun setMMText(unicodeString: String) {
-        if (MDetect.isUnicode()) {
-            text = unicodeString
-        } else {
-            text = Rabbit.uni2zg(unicodeString)
-        }
+        text = MDetect.getText(unicodeString)
     }
 
     /**
@@ -42,5 +33,5 @@ class MMTextView : TextView {
      * @return CharSequence in Myanmar Unicode
      */
     val mmText: CharSequence
-        get() = if (MDetect.isUnicode()) text else Rabbit.zg2uni(text.toString())
+        get() = MDetect.getText(text.toString())
 }

@@ -1,21 +1,25 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+def versionMajor = 3
+def versionMinor = 2
+def versionPatch = 0
+
 ext {
     PUBLISH_GROUP_ID = 'myatminsoe.mdetect.android'
     PUBLISH_ARTIFACT_ID = 'mdetect-android'
-    PUBLISH_VERSION = '3.0'
+    PUBLISH_VERSION = "${versionMajor}.${versionMinor}.${versionPatch}"
 }
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 6
-        versionName "3.0"
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
     }
     buildTypes {
         release {

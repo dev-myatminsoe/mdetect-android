@@ -5,18 +5,17 @@ import android.widget.Toast
 
 object MMToast {
 
-    val LENGTH_SHORT = Toast.LENGTH_SHORT
-    val LENGTH_LONG = Toast.LENGTH_LONG
+    private var toast: Toast? = null
 
-    fun makeText(context: Context, message: CharSequence, duration: Int): Toast {
-        var charSequence = message
-        if (!MDetect.isUnicode()) charSequence = Rabbit.uni2zg(charSequence.toString())
-        return Toast.makeText(context, charSequence, duration)
+    fun showShortToast(context: Context, message: CharSequence) {
+        toast?.cancel()
+        toast = Toast.makeText(context, MDetect.getText(message.toString()), Toast.LENGTH_SHORT)
+        toast!!.show()
     }
 
-    fun makeText(context: Context, resId: Int, duration: Int): Toast {
-        var message = context.resources.getString(resId)
-        if (!MDetect.isUnicode()) message = Rabbit.uni2zg(message)
-        return Toast.makeText(context, message, duration)
+    fun showLongToast(context: Context, message: CharSequence) {
+        toast?.cancel()
+        toast = Toast.makeText(context, MDetect.getText(message.toString()), Toast.LENGTH_LONG)
+        toast!!.show()
     }
 }

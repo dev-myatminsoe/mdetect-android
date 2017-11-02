@@ -1,15 +1,19 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+def versionMajor = 3
+def versionMinor = 2
+def versionPatch = 0
+
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "me.myatminsoe.mdetectsample"
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 3
-        versionName "3.0"
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
     }
     buildTypes {
         release {
@@ -20,7 +24,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
     compile project(':mdetect')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
