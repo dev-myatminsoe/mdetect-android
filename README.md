@@ -98,8 +98,18 @@ MDetect have custom views for **TextView**, **EditText** and **Button**
 </LinearLayout>
 ```
 
-### Setting and Getting Text
+## Setting and Getting Text for custom views
 use setMMText() and getMMText() instead of setText() and getText() for custom views.
+
+## Getting Text
+### Kotlin
+```kotlin
+MDetect.getText("မင်္ဂလာပါ") //return မဂၤလာပါ is the device is using zawgyi
+```
+### Java
+```java
+MDetect.INSTANCE.getText("မင်္ဂလာပါ") //return မဂၤလာပါ is the device is using zawgyi
+```
 
 ## Toast
 ### Kotlin
