@@ -4,17 +4,15 @@ import android.content.Context
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.TextView
+import com.comquas.rabbit.Rabbit
 
 object MDetect {
 
-    private val TYPE_DEFAULT = 0
-    private val TYPE_UNICODE = 1
-    private val TYPE_ZAWGYI = 2
+    private var cacheUnicode: Boolean? = null
 
-    private var isUnicode = TYPE_DEFAULT
 
     fun init(context: Context) {
-        if (isUnicode != TYPE_DEFAULT) {
+        if (cacheUnicode != null) {
             Log.i("MDetect", "MDetect was already initialized.")
             return
         }
@@ -30,9 +28,7 @@ object MDetect {
         textView.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         val length2 = textView.measuredWidth
 
-        Log.i("MDetect", length1.toString() + ", " + length2)
-
-        isUnicode = if (length1 == length2) TYPE_UNICODE else TYPE_ZAWGYI
+        cacheUnicode = length1 == length2
     }
 
     /**
@@ -41,9 +37,9 @@ object MDetect {
      * @return whether the device follows myanmar unicode standard
      */
     fun isUnicode(): Boolean {
-        if (isUnicode == TYPE_DEFAULT)
+        if (null == cacheUnicode)
             throw UnsupportedOperationException("MDetect was not initialized.")
-        return isUnicode == TYPE_UNICODE
+        return cacheUnicode!!
     }
 
     /**
@@ -60,7 +56,7 @@ object MDetect {
      * @param inputString String inputted by user
      * @return Unicode String
      */
-    fun getInputString(inputString: String): String {
+    fun getInputText(inputString: String): String {
         return if (isUnicode()) inputString else Rabbit.zg2uni(inputString)
     }
 
