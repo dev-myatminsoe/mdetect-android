@@ -8,11 +8,11 @@ import java.util.concurrent.Executor
 class MMTextView : TextView {
 
   constructor(context: Context) : super(context) {
-    setMMText(text.toString())
+    setMMText(text.toString(), null)
   }
 
   constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-    setMMText(text.toString())
+    setMMText(text.toString(), null)
   }
 
   constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
@@ -20,7 +20,7 @@ class MMTextView : TextView {
     attrs,
     defStyle
   ) {
-    setMMText(text.toString())
+    setMMText(text.toString(), null)
   }
 
   /**

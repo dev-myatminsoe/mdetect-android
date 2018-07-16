@@ -11,34 +11,59 @@ import me.myatminsoe.mdetect.MMToast
 
 class MainActivity : AppCompatActivity() {
 
-    private val items = arrayOf("ဧရာဝတီတိုင်းဒေသကြီး","ပဲခူးတိုင်းဒေသကြီး","ချင်းပြည်နယ်","ကချင်ပြည်နယ်","ကယားပြည်နယ်","ကရင်ပြည်နယ်","မကွေးတိုင်းဒေသကြီး","မန္တလေးတိုင်းဒေသကြီး","မွန်ပြည်နယ်","ရခိုင်ပြည်နယ်","ရှမ်းပြည်နယ်","စစ်ကိုင်းတိုင်းဒေသကြီး","တနင်္သာရီတိုင်းဒေသကြီး","ရန်ကုန်တိုင်းဒေသကြီး","နေပြည်တော် ပြည်ထောင်စုနယ်မြေ")
+  private val items = arrayOf(
+    "ဧရာဝတီတိုင်းဒေသကြီး",
+    "ပဲခူးတိုင်းဒေသကြီး",
+    "ချင်းပြည်နယ်",
+    "ကချင်ပြည်နယ်",
+    "ကယားပြည်နယ်",
+    "ကရင်ပြည်နယ်",
+    "မကွေးတိုင်းဒေသကြီး",
+    "မန္တလေးတိုင်းဒေသကြီး",
+    "မွန်ပြည်နယ်",
+    "ရခိုင်ပြည်နယ်",
+    "ရှမ်းပြည်နယ်",
+    "စစ်ကိုင်းတိုင်းဒေသကြီး",
+    "တနင်္သာရီတိုင်းဒေသကြီး",
+    "ရန်ကုန်တိုင်းဒေသကြီး",
+    "နေပြည်တော် ပြည်ထောင်စုနယ်မြေ"
+  )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
 
-        val tv = findViewById(R.id.tv_main) as MMTextView
+    val tv = findViewById<MMTextView>(R.id.tv_main)
 
-        title = MDetect.getText("မြန်မာ")
+    title = MDetect.getText("မြန်မာ")
 
-        if (MDetect.isUnicode()) {
-            tv.text = "ယူနီကုဒ်စနစ်ကိုအသုံးပြုထားပါသည်။"
-            tv.setTextColor(resources.getColor(R.color.green_500))
-        } else {
-            tv.text = "ေဇာ္ဂ်ီစနစ္ကိုအသံုးျပဳထားပါသည္။"
-            tv.setTextColor(resources.getColor(R.color.red_500))
-        }
-
+    if (MDetect.isUnicode()) {
+      tv.text = "ယူနီကုဒ်စနစ်ကိုအသုံးပြုထားပါသည်။"
+      tv.setTextColor(resources.getColor(R.color.green_500))
+    } else {
+      tv.text = "ေဇာ္ဂ်ီစနစ္ကိုအသံုးျပဳထားပါသည္။"
+      tv.setTextColor(resources.getColor(R.color.red_500))
     }
 
-    fun divisions(v: View) {
-        val builder = AlertDialog.Builder(this)
-        builder.setItems(MDetect.getStringArray(items)) { dialog, which ->
-            (v as MMButtonView).setMMText(items[which])
-        }.show()
-    }
+  }
 
-    fun showMyanmarToast(v: View) {
-        MMToast.showShortToast(this, "မင်္ဂလာပါ")
-    }
+  fun divisions(v: View) {
+    val builder = AlertDialog.Builder(this)
+    builder.setItems(MDetect.getStringArray(items)) { dialog, which ->
+      (v as MMButtonView).setMMText(items[which])
+    }.show()
+  }
+
+  fun showMyanmarToast(v: View) {
+    MMToast.showShortToast(this, "မင်္ဂလာပါ")
+  }
+
+  fun foreground(v: View) {
+    startActivity(LargeTextActivity.newIntent(this, false))
+  }
+
+  fun background(v: View) {
+    startActivity(LargeTextActivity.newIntent(this, true))
+  }
+
 }
